@@ -1,5 +1,7 @@
 # Autopent
 
+|docs|
+
 Autopent is an automated command line pentesting tool for wireless networks. Written entirely in Python, it tests the presence of some common vulnerabilities in networks' security, and therefore may be used in a penetration test to assess security level.
 
 It contains some basic attacks(WEP and WPA-PSK key cracking,...) and some advanced attacks(MITM attack and DNS spoofing attack).
@@ -45,3 +47,7 @@ The tool is coded to run a check for required tools in the moment of execution, 
 
 A list of requirements is available in the *Requirements* documentation section.
 
+.. |docs| image:: https://readthedocs.org/projects/autopent/badge/?version=latest
+    :alt: Documentation Status
+    :scale: 100%
+    :target: http://autopent.readthedocs.io/en/latest/?badge=latest
