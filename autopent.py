@@ -66,11 +66,14 @@ class Autopent():
             self.exit_cleanly(1)
 
     def verify_tools(self):
-        '''Verify the availability of the needed tools on the system'''
+        '''
+        Verifies the availability of the needed tools on the system
+        If a tools is missing, prints error messages and exits cleanly
+        '''
         
         tools = ['aircrack-ng', 'airmon-ng', 'aireplay-ng', 'airodump-ng', 
                 'packetforge-ng', 'wireshark', 'dnsspoof', 'airbase-ng',
-                'brctl', 'ifconfig', 'echo', 'dnsmasq', 'hostapd',
+                'ifconfig', 'echo', 'dnsmasq', 'hostapd',
                 'dhcpd', 'iptables']
         for tool in tools:
             if self.helpers.check_availability(tool): continue

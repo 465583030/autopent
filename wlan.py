@@ -35,6 +35,7 @@ class Wlan():
         '''
         Basically like a MITM attack but imitates a specific AP, spoofing
         its BSSID, ESSID and channel
+        Returns a table containing the AP's process
         '''
 
         proc1 = Popen(['airbase-ng', '--essid', essid, '-a', bssid, '-c',
@@ -49,7 +50,8 @@ class Wlan():
     def mitm(self, bssid, essid, channel, interface, dnsspoofing=False):
         '''
         Launches a Man In The Middle attack, and opens 
-        wireshark to see and inspect packets captured on the at0 interface
+        wireshark to see and inspect packets captured on the at0 interface.
+        Returns a table containing the process(es)
         '''
         
         proc1 = Popen(['airbase-ng', '--essid', essid, '-a', bssid, '-c', 
@@ -100,9 +102,9 @@ class Wlan():
 
     def configure_route(self):
         '''
-        Configures routing rules and IPTables rules to allow packet relaying,
-        starts also the dnsmasq server and Apache Web server.
-        Returns the two servers' processes in a table
+        Configures routing rules and IPTables rules to allow packet relaying
+        and forwarding.
+        Calls consecutively a list of commands.
         '''
  
         call(['ifconfig', 'at0', '192.168.2.1', 'netmask', '255.255.255.0',
@@ -144,7 +146,7 @@ class Wlan():
             '--ignore-negative-one', interface], stdout=DN, stderr=DN)
         return {'proc1':proc1, 'proc2':proc2, 'cap':capfile1}
 
-    def deauth_clients(self, bssid, interface, bssidc):
+    def deauth_clients(self, bssid, interface, bssidc=0):
         '''
         Launches deauth attacks on the AP to disconnect clients attached
         to it; when the client MAC is given then the attack is better
@@ -160,7 +162,10 @@ class Wlan():
         return proc
 
     def change_mac(self, mac, interface):
-        '''Changes wireless card physical - MAC address to the given one'''
+        '''
+        Changes wireless card physical - MAC - address to the given one.
+        Returns the subprocess.
+        '''
 
         command = ['ifconfig', interface, 'hw', 'ether', mac]
         proc = Popen(command, stdout=DN, stderr=DN)
