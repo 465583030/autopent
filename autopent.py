@@ -13,6 +13,11 @@ from colorama import init as coloramainit
 from wlan import Wlan
 from helpers import Helpers
 
+__author__ = 'Youssef Seddik'
+__version__ = '0.1'
+__license__ = 'MIT License'
+
+
 #GLOBAL VARIABLES IN ALL_CAPS
 WLAN_EXP = re.compile(r'wlan[0-9]{1}')
 MON_EXP = re.compile(r'mon[0-9]{1}')

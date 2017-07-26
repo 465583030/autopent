@@ -8,6 +8,11 @@ from colorama import init as coloramainit
 
 from structures import Client, Target
 
+__author__ = 'Youssef Seddik'
+__version__ = '0.1'
+__license__ = 'MIT License'
+
+
 #Console colors
 B = Fore.BLUE
 R = Fore.RED

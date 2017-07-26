@@ -5,6 +5,11 @@ from subprocess import call, Popen
 from tempfile import mkstemp
 from time import sleep
 
+__author__ = 'Youssef Seddik'
+__version__ = '0.1'
+__license__ = 'MIT License'
+
+
 #GLOBAL VARIABLES IN ALL CAPS
 DN = open(os.devnull, 'w')
 OUTLOG = open(os.devnull, 'w')

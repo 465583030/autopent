@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+__author__ = 'Youssef Seddik'
+__version__ = '0.1'
+__license__ = 'MIT License'
+
+
 class Target:
     '''
     Data structure for a target: an Access Point - AP
