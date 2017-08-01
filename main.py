@@ -4,6 +4,10 @@ import os
 from colorama import Fore, Style
 from colorama import init as coloramainit
 
+__author__ = 'Youssef Seddik'
+__version__ = '0.1'
+__license__ = 'MIT License'
+
 #GLOBAL VARIABLES
 ##Console Colors
 B = Fore.BLUE
